@@ -1,0 +1,13 @@
+{
+  "name": "ht-toolbar-toast",
+  "flat": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/maksimyurkov/ht-toolbar-toast",
+  "author": "maksimyurkov <yurkov.maksim.sergeevich@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@polymer/lit-element": "^3.0.0-pre.10",
+    "@polymer/paper-toast": "^3.0.0-pre.10"
+  }
+}
