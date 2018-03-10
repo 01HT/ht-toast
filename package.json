@@ -2,7 +2,7 @@
   "name": "ht-toast",
   "main": "ht-toast.js",
   "version": "1.0.0",
-  "repository": "https://github.com/maksimyurkov/ht-toolbar-toast",
+  "repository": "https://github.com/maksimyurkov/ht-toast",
   "author": "maksimyurkov <yurkov.maksim.sergeevich@gmail.com>",
   "license": "MIT",
   "dependencies": {
