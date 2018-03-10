@@ -1,7 +1,7 @@
 "use strict";
-import { LitElement, html } from "../@polymer/lit-element/lit-element.js";
-import "../@polymer/paper-toast/paper-toast.js";
-import "../@polymer/paper-button/paper-button.js";
+import { LitElement, html } from "@polymer/lit-element";
+import "@polymer/paper-toast";
+import "@polymer/paper-button";
 
 class HTToast extends LitElement {
   render({
