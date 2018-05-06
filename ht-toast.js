@@ -4,7 +4,7 @@ import "@polymer/paper-toast";
 import "@polymer/paper-button";
 
 class HTToast extends LitElement {
-  render({
+  _render({
     text,
     link,
     linkTitle,
@@ -139,7 +139,6 @@ class HTToast extends LitElement {
       default:
         break;
     }
-    console.log(this.connectionToast);
     this.toast.show({
       text: this.text,
       duration: this.duration
