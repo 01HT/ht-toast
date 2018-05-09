@@ -6,7 +6,7 @@
   "author": "maksimyurkov <yurkov.maksim.sergeevich@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@polymer/lit-element": "@next",
-    "@polymer/paper-toast": "@next"
+    "@polymer/lit-element": "^0.5.1",
+    "@polymer/paper-toast": "^3.0.0-pre.18"
   }
 }
