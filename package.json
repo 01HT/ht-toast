@@ -1,10 +1,10 @@
 {
-  "name": "ht-toast",
+  "name": "@01ht/ht-toast",
   "main": "ht-toast.js",
   "version": "1.0.0",
-  "repository": "https://github.com/maksimyurkov/ht-toast",
-  "author": "maksimyurkov <yurkov.maksim.sergeevich@gmail.com>",
-  "license": "MIT",
+  "repository": "01ht/ht-toast",
+  "author": "01ht Ltd",
+  "license": "UNLICENSED",
   "dependencies": {
     "@polymer/lit-element": "^0.5.1",
     "@polymer/paper-toast": "^3.0.0-pre.18"
