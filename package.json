@@ -1,12 +1,13 @@
 {
   "name": "@01ht/ht-toast",
   "main": "ht-toast.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "01ht/ht-toast",
-  "author": "01ht Ltd",
+  "author": "01HT Ltd",
   "license": "UNLICENSED",
   "dependencies": {
-    "@polymer/lit-element": "^0.5.1",
-    "@polymer/paper-toast": "^3.0.0-pre.18"
+    "@polymer/lit-element": "^0.6.1",
+    "@polymer/paper-toast": "^3.0.1",
+    "@polymer/paper-button": "^3.0.1"
   }
 }

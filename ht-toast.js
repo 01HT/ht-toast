@@ -4,16 +4,15 @@ import "@polymer/paper-toast";
 import "@polymer/paper-button";
 
 class HTToast extends LitElement {
-  _render({
-    text,
-    link,
-    linkTitle,
-    duration,
-    linkToast,
-    closeToast,
-    connectionToast,
-    smallScreen
-  }) {
+  render() {
+    const {
+      connectionToast,
+      closeToast,
+      linkToast,
+      smallScreen,
+      link,
+      linkTitle
+    } = this;
     return html`
       <style>
         a {
@@ -27,6 +26,11 @@ class HTToast extends LitElement {
         paper-toast {
           max-width:568px;
           min-width: 288px;
+        }
+
+        [connection] {
+          text-align:center; 
+          margin:24px 0 0 0;
         }
 
         paper-button {
@@ -43,16 +47,14 @@ class HTToast extends LitElement {
           display:none;
         }
       </style>
-      <paper-toast style$='${
-        connectionToast ? "text-align:center; margin:24px 0 0 0;" : ""
-      }'  horizontal-align$='${connectionToast ? "center" : "left"}' class$=${
-      smallScreen ? "fit-bottom" : ""
-    } on-iron-overlay-closed=${e => {
+      <paper-toast ?connection=${connectionToast}  horizontal-align=${
+      connectionToast ? "center" : "left"
+    } class=${smallScreen ? "fit-bottom" : ""} @iron-overlay-closed=${e => {
       this._toastClosed();
-    }}><paper-button hidden?=${!closeToast} onclick=${e => {
+    }}><paper-button ?hidden=${!closeToast} @click=${e => {
       this._closeToast();
     }}>Закрыть</paper-button>
-      <a href=${link} hidden?=${!linkToast} onclick=${e => {
+      <a href=${link} ?hidden=${!linkToast} @click=${e => {
       this._closeToast();
     }}><paper-button>${linkTitle}</paper-button></a></paper-toast>
 `;
@@ -64,15 +66,15 @@ class HTToast extends LitElement {
 
   static get properties() {
     return {
-      store: Array,
-      text: String,
-      link: String,
-      linkTitle: String,
-      duration: Number,
-      linkToast: Boolean,
-      closeToast: Boolean,
-      connectionToast: Boolean,
-      smallScreen: Boolean
+      store: { type: Array },
+      text: { type: String },
+      link: { type: String },
+      linkTitle: { type: String },
+      duration: { type: Number },
+      linkToast: { type: Boolean },
+      closeToast: { type: Boolean },
+      connectionToast: { type: Boolean },
+      smallScreen: { type: Boolean }
     };
   }
 
