@@ -1,9 +1,43 @@
 "use strict";
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html, css } from "lit-element";
 import "@polymer/paper-toast";
 import "@polymer/paper-button";
 
 class HTToast extends LitElement {
+  static styles = css`<style>
+    a {
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+      padding:0;
+      margin:0;
+    }
+
+    paper-toast {
+      max-width:568px;
+      min-width: 288px;
+    }
+
+    [connection] {
+      text-align:center; 
+      margin:24px 0 0 0;
+    }
+
+    paper-button {
+      margin-left:48px;
+      font-weight:500;
+      padding:0;
+      margin:0;
+      color:#eeff41;
+      height:20px;
+      float: right;
+    }
+
+    [hidden] {
+      display:none;
+    }
+  </style>`;
+
   render() {
     const {
       connectionToast,
@@ -14,54 +48,17 @@ class HTToast extends LitElement {
       linkTitle
     } = this;
     return html`
-      <style>
-        a {
-          text-decoration: none;
-          color: inherit;
-          outline: none;
-          padding:0;
-          margin:0;
-        }
-
-        paper-toast {
-          max-width:568px;
-          min-width: 288px;
-        }
-
-        [connection] {
-          text-align:center; 
-          margin:24px 0 0 0;
-        }
-
-        paper-button {
-          margin-left:48px;
-          font-weight:500;
-          padding:0;
-          margin:0;
-          color:#eeff41;
-          height:20px;
-          float: right;
-        }
-
-        [hidden] {
-          display:none;
-        }
-      </style>
-      <paper-toast ?connection=${connectionToast}  horizontal-align=${
+      <paper-toast ?connection="${connectionToast}"  horizontal-align=" ${
       connectionToast ? "center" : "left"
-    } class=${smallScreen ? "fit-bottom" : ""} @iron-overlay-closed=${e => {
-      this._toastClosed();
-    }}><paper-button ?hidden=${!closeToast} @click=${e => {
-      this._closeToast();
-    }}>Закрыть</paper-button>
-      <a href=${link} ?hidden=${!linkToast} @click=${e => {
-      this._closeToast();
-    }}><paper-button>${linkTitle}</paper-button></a></paper-toast>
+    }" class="${smallScreen ? "fit-bottom" : ""}" @iron-overlay-closed="${
+      this._toastClosed
+    }"><paper-button ?hidden="${!closeToast}" @click="${
+      this._closeToast
+    }">Закрыть</paper-button>
+      <a href="${link}" ?hidden="${!linkToast}" @click="${
+      this._closeToast
+    }"><paper-button>${linkTitle}</paper-button></a></paper-toast>
 `;
-  }
-
-  static get is() {
-    return "ht-toast";
   }
 
   static get properties() {
@@ -158,4 +155,4 @@ class HTToast extends LitElement {
   }
 }
 
-customElements.define(HTToast.is, HTToast);
+customElements.define("ht-toast", HTToast);
