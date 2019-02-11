@@ -4,39 +4,41 @@ import "@polymer/paper-toast";
 import "@polymer/paper-button";
 
 class HTToast extends LitElement {
-  static styles = css`<style>
-    a {
-      text-decoration: none;
-      color: inherit;
-      outline: none;
-      padding:0;
-      margin:0;
-    }
+  static get styles() {
+    return css`
+      a {
+        text-decoration: none;
+        color: inherit;
+        outline: none;
+        padding: 0;
+        margin: 0;
+      }
 
-    paper-toast {
-      max-width:568px;
-      min-width: 288px;
-    }
+      paper-toast {
+        max-width: 568px;
+        min-width: 288px;
+      }
 
-    [connection] {
-      text-align:center; 
-      margin:24px 0 0 0;
-    }
+      [connection] {
+        text-align: center;
+        margin: 24px 0 0 0;
+      }
 
-    paper-button {
-      margin-left:48px;
-      font-weight:500;
-      padding:0;
-      margin:0;
-      color:#eeff41;
-      height:20px;
-      float: right;
-    }
+      paper-button {
+        margin-left: 48px;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+        color: #eeff41;
+        height: 20px;
+        float: right;
+      }
 
-    [hidden] {
-      display:none;
-    }
-  </style>`;
+      [hidden] {
+        display: none;
+      }
+    `;
+  }
 
   render() {
     const {
@@ -48,7 +50,7 @@ class HTToast extends LitElement {
       linkTitle
     } = this;
     return html`
-      <paper-toast ?connection="${connectionToast}"  horizontal-align=" ${
+      <paper-toast ?connection="${connectionToast}" .horizontal-align="${
       connectionToast ? "center" : "left"
     }" class="${smallScreen ? "fit-bottom" : ""}" @iron-overlay-closed="${
       this._toastClosed
